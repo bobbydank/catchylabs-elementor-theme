@@ -54,11 +54,6 @@ function cl_register_required_plugins() {
 		   	'required'                 => false, // If false, the plugin is only 'recommended' instead of required
 		),
 		array(
-			'name'                     => esc_html__('Tag Manager'), // The plugin name
-		   	'slug'                     => 'tag-manager-header-body-footer', // The plugin slug (typically the folder name)
-		   	'required'                 => false, // If false, the plugin is only 'recommended' instead of required
-		),
-		array(
 			'name'                     => esc_html__('Elementor Essential Addons'), // The plugin name
 		   	'slug'                     => 'essential-addons-for-elementor-lite', // The plugin slug (typically the folder name)
 		   	'required'                 => false, // If false, the plugin is only 'recommended' instead of required
