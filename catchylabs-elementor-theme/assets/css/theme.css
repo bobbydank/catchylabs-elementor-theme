@@ -1,0 +1,135 @@
+/** *************************************************************
+  Site specific stuff here */
+
+.eael-adv-accordion .eael-accordion-list .eael-accordion-content p {margin-bottom:15px;}
+.mfp-iframe-holder .mfp-close:hover {background:transparent;}
+
+@media (max-width:767px) {
+  #footer > .elementor-container > div {width:100% !important; text-align:center !important;}
+  .elementor-105 .elementor-element.elementor-element-a31d8e3 {text-align:center !important;}
+}
+
+/** *************************************************************
+  Home Page */
+
+body.home header,
+body.home footer {
+  opacity:0;
+  transition:var(--default-transition);
+}
+
+body.home.hf-on header,
+body.home.hf-on footer {
+  opacity:1;
+}
+
+#home-hero .elementor-column,
+#home-hero .elementor-element,
+#home-hero .elementor-element .elementor-widget-container {
+  height:100vh;
+}
+
+#vectors {
+  position:absolute;
+  top:0;
+  left:0;
+  height:100vh;
+  width:100%;
+  z-index: 500;
+  background-color: black;
+}
+
+#home-typing {
+  z-index: 600;
+  position: relative;
+  display:flex;
+  height:100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top:-35px;
+}
+
+#home-typing > div {
+  position: relative;
+  padding-bottom:20px;
+}
+
+#home-typing h1 {
+  color:white;
+  position: relative;
+  font-size:4vw;
+  font-weight: var(--accent-strong-w);
+}
+
+@media (max-width:800px) {
+  #home-typing h1 {
+    font-size:32px;
+  }
+}
+
+#home-typing h1 .primary-color {
+  color:var(--primary);
+}
+
+#home-typing h1 > div:last-child {
+  text-align: center;
+  font-size:2vw;
+  transition: var(--default-transition);
+}
+
+#home-typing h1 > div:last-child:hover {
+  font-size:3vw;
+}
+
+#home-typing .button-container {
+  position:absolute;
+  top:100%;
+  left:0;
+}
+
+#scroll-btn {
+  padding:10px 15px;
+  border-radius:5px;
+  border: solid 2px white;
+  color:white;
+  text-transform:uppercase;
+  font-family:var(--accent-font);
+  display:inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+
+  transition: var(--default-transition);
+  transform: perspective(2500px) rotateX(-90deg);
+}
+
+#scroll-btn.show {
+  transform: perspective(2500px) rotateX(0);
+}
+
+#scroll-btn i {
+  margin-left:20px;
+}
+
+#scroll-btn div {
+  position: relative;
+  z-index: 600;
+}
+
+#scroll-btn:after {
+  width:0;
+  height:100%;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 500;
+  content:"";
+  display:block;
+  background-color:var(--primary);
+  transition:var(--default-transition);
+}
+
+#scroll-btn:hover:after {
+  width:100%;
+}
