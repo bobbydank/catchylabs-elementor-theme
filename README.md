@@ -11,4 +11,6 @@ Well, here's how I do it:
 ```
 cd wp-content/themes
 git clone https://github.com/bobbydank/catchylabs-elementor-theme
+cd catchylabs-elementor-theme
+composer update
 ```
