@@ -1,4 +1,4 @@
-# Catchylabs Elementor Theme
+# CatchyLabs Elementor Theme
 
 A simple, lightweight Wordpress theme built perfect for Elementor. 
 
