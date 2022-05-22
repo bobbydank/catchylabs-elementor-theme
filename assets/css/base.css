@@ -1,12 +1,3 @@
-/*
-Theme Name: B3 Elementor
-Description: Plain theme for building sites with elementor
-Author: Barnes Digital Agency
-Author URI: https://www.barn3s.com/
-Version: 1.0.0
-Text Domain: cl-elementor
-*/
-
 html {
     line-height: 1.5;
     /* 1 */
@@ -1651,4 +1642,37 @@ Intertek badge
         position: relative;
         top: 20px;
     }
+}
+
+/* Search
+   ========================================================================== */
+
+.search-icon {color:white; font-size:16px; cursor:pointer;}
+
+.search-overlay {height: 100vh; width: 100%; display: none; position: fixed; z-index: 100000; top: 0; left: 0; background-color: rgba(75,165,176, 0.8);}
+.search-overlay-content {position: relative;top: 46%;  width: 50%;  text-align: center;  margin: auto;}
+.search-overlay .icon-cancel {position: absolute;top: 20px;right: 45px;font-size: 40px;cursor: pointer;color: white;}
+.search-overlay .icon-cancel:hover {color: #ccc;}
+.search-overlay input[type=text] {padding: 15px; font-size: 17px; border: none; float: left; width: 80%; background: white;}
+.search-overlay input[type=text]:hover {background: #f1f1f1;}
+.search-overlay button {float: left; width: 18%; margin-left:2%; padding:7px 15px 9px; transition: all 0.5s; font-size: 25px; border: none; cursor: pointer; color: #fff; background:rgba(242,154,48,0.3); border:solid thin #f29a30;}
+.search-overlay button:hover {background: #f29a30;}
+
+@media (max-width: 767px) {
+    .search-overlay-content {width: 80%;}
+    .search-overlay .icon-cancel {top: 15px;right: 15px;}
+}
+
+.search-result {
+    border-bottom:solid thin rgba(55,55,55,0.5);
+    padding-bottom:20px;
+    margin-bottom:20px;
+}
+
+.search-result:last-child {
+    border-bottom:none;
+}
+
+.search-result img {
+    display:none;
 }
