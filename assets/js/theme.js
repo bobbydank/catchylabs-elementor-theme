@@ -14,7 +14,7 @@ $(window).load(function () {
     
 $(document).ready(function () {
 	//search icons
-    $('.search-icon').click(function () {
+    $('.cl-search-icon').click(function () {
 		if (!$('#search-form-overlay').is(':visible')) {
 		  $('#search-form-overlay').fadeIn();
 		}

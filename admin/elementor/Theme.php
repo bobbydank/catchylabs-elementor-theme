@@ -17,6 +17,7 @@ use CL\Elementor\Theme\Widgets\Drop_List;
 use CL\Elementor\Theme\Widgets\Menu;
 use CL\Elementor\Theme\Widgets\Title;
 use CL\Elementor\Theme\Widgets\Sitemap;
+use CL\Elementor\Theme\Widgets\Search_Icon;
 
 /**
  * Class Theme
@@ -51,6 +52,7 @@ class Theme extends Base {
 		//$this->add_elementor_widget( Circle_Graphic::class );
 		//$this->add_elementor_widget( Drop_List::class );
 		//$this->add_elementor_widget( Slider::class );
+		$this->add_elementor_widget( Search_Icon::class );
 
 		// Register styles
 		$styles = array(
