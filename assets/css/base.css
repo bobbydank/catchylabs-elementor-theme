@@ -1,3 +1,4 @@
+
 html {
     line-height: 1.5;
     /* 1 */
@@ -18,9 +19,9 @@ html {
    
 body {
     margin: 0;
-    font-family:var(--base-font);
-    font-size: var(--base-font-size);
-    font-weight: var(--base-font-w);
+    font-family:var(--base-font, 'Verdana');
+    font-size: var(--base-font-size, 20px);
+    font-weight: var(--base-font-w, normal);
     line-height: 1.5;
     color: var(--text);
     background-color: #fff;
@@ -28,21 +29,28 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+strong {
+    font-family:var(--base-font-strong, 'Verdana');
+    font-weight:var(--base-font-strong-w, bold);
+}
+
 /**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
+
 h1, h2, h3, h4, h5, h6 {
     margin-top: .5rem;
     margin-bottom: 1rem;
-    font-family: var(--accent-font);
-    font-weight: var(--accent-font-w);
+    font-family: var(--accent-font, 'Garamond');
+    font-weight: var(--accent-font-w, normal);
     line-height: 1.2;
     color: inherit;
 }
 
 h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong {
-    font-weight:var(--accent-strong-w);
+    font-family:var(--accent-font-strong, 'Garamond');
+    font-weight:var(--accent-font-strong-w, bold);
 }
 
 h1 {
@@ -74,10 +82,6 @@ p {
     margin-bottom: .9rem;
 }
 
-p strong {
-    font-family:var(--base-font-bold);
-}
-
 /* Grouping content
    ========================================================================== */
 /**
@@ -105,6 +109,13 @@ pre {
     /* 2 */
     white-space: pre-wrap;
 }
+
+/**
+ * Hides the site's header footer when viewing the header-footer post single
+ */
+
+body.single-cl_header_footer header,
+body.single-cl_header_footer footer {display:none;}
 
 /* Text-level semantics
    ========================================================================== */
@@ -373,7 +384,6 @@ textarea {
     -webkit-transition: all .3s;
     -o-transition: all .3s;
     transition: all .3s;
-    font-family:var(--base-font-bold) !important;
     text-transform:uppercase;
 }
 
@@ -385,8 +395,7 @@ input[type="password"]::placeholder,
 input[type="search"]::placeholder,
 input[type="tel"]::placeholder,
 input[type="url"]::placeholder {
-    color:var(--text);
-    font-family:var(--base-font-bold) !important;
+    color:var(--text, #333);
 }
 
 input[type="text"]:focus,
@@ -459,8 +468,7 @@ button,
 [type="submit"],
 [type="button"] {
     display: inline-block;
-    font-weight: 400;
-    color: #CC3366;
+    color: var(--primary, #CC3366);
     text-align: center;
     white-space: nowrap;
     -webkit-user-select: none;
@@ -468,7 +476,7 @@ button,
     -ms-user-select: none;
     user-select: none;
     background-color: transparent;
-    border: 1px solid #CC3366;
+    border: 1px solid var(--primary, #CC3366);
     padding: 0.5rem 1rem;
     font-size: 1rem;
     border-radius: 3px;
@@ -490,7 +498,7 @@ button:hover, button:focus,
 [type="button"]:hover,
 [type="button"]:focus {
     color: #ffffff;
-    background-color: #CC3366;
+    background-color: var(--primary, #CC3366);
     text-decoration: none;
 }
 
@@ -1268,7 +1276,7 @@ footer .default-footer .social li a:hover {
 /* Footer Copyright
    ========================================================================== */
 
-   .copyright-menu ul li:last-child {
+.copyright-menu ul li:last-child {
     border-right: 0;
     margin-right: 0;
 }
@@ -1647,16 +1655,16 @@ Intertek badge
 /* Search
    ========================================================================== */
 
-.search-icon {color:white; font-size:16px; cursor:pointer;}
+.cl-search-icon {cursor:pointer;}
 
-.search-overlay {height: 100vh; width: 100%; display: none; position: fixed; z-index: 100000; top: 0; left: 0; background-color: rgba(75,165,176, 0.8);}
+.search-overlay {height: 100vh; width: 100%; display: none; position: fixed; z-index: 100000; top: 0; left: 0; background-color: rgba(51,51,51, 0.8);}
 .search-overlay-content {position: relative;top: 46%;  width: 50%;  text-align: center;  margin: auto;}
-.search-overlay .icon-cancel {position: absolute;top: 20px;right: 45px;font-size: 40px;cursor: pointer;color: white;}
+.search-overlay .icon-cancel {position: absolute;top: 20px;right: 45px;font-size: 40px;cursor: pointer;color: #eee;}
 .search-overlay .icon-cancel:hover {color: #ccc;}
-.search-overlay input[type=text] {padding: 15px; font-size: 17px; border: none; float: left; width: 80%; background: white;}
-.search-overlay input[type=text]:hover {background: #f1f1f1;}
-.search-overlay button {float: left; width: 18%; margin-left:2%; padding:7px 15px 9px; transition: all 0.5s; font-size: 25px; border: none; cursor: pointer; color: #fff; background:rgba(242,154,48,0.3); border:solid thin #f29a30;}
-.search-overlay button:hover {background: #f29a30;}
+.search-overlay input[type=text] {padding: 15px; font-size: 17px; border: none; float: left; width: 80%; background: #eee;}
+.search-overlay input[type=text]:hover {background: #eee;}
+.search-overlay button {float: left; width: 18%; margin-left:2%; padding:7px 15px 9px; transition: all 0.5s; font-size: 25px; border: none; cursor: pointer; color: var(--text, #333); background:var(--primary, white); border:solid thin var(--text, #333); }
+.search-overlay button:hover {background: transparent; }
 
 @media (max-width: 767px) {
     .search-overlay-content {width: 80%;}
@@ -1676,3 +1684,4 @@ Intertek badge
 .search-result img {
     display:none;
 }
+

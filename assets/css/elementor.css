@@ -2,6 +2,10 @@
 .elementor-toggle .elementor-tab-title {padding-top:0 !important;}
 .elementor-toggle .elementor-toggle-icon {margin-top:8px}
 
+.elementor-widget-image a {
+   display: block !important;
+}
+
 /* Element manipulation
    ========================================================================== */
 
@@ -103,8 +107,30 @@ body.elementor-editor-active .elementor-column {min-width:50px !important;}
    .elementor-column.md\:width-auto {width:auto !important;}
 }
 
-/* Column Holds 
+/* 2 Column Holds 
    ========================================================================== */
+
+.elementor-section.cols-w-auto > .elementor-container > .elementor-column {width:auto !important;}
+
+.elementor-section.hold-50 > .elementor-container > .elementor-column {width:50% !important;}
+
+.elementor-section.hold-75-25 > .elementor-container > .elementor-column:first-child {width:75% !important;}
+.elementor-section.hold-75-25 > .elementor-container > .elementor-column:last-child {width:25% !important;}
+
+.elementor-section.hold-25-75 > .elementor-container > .elementor-column:first-child {width:25% !important;}
+.elementor-section.hold-25-75 > .elementor-container > .elementor-column:last-child {width:75% !important;}
+
+.elementor-section.hold-60-40 > .elementor-container > .elementor-column:first-child {width:60% !important;}
+.elementor-section.hold-60-40 > .elementor-container > .elementor-column:last-child {width:40% !important;}
+
+.elementor-section.hold-40-60 > .elementor-container > .elementor-column:first-child {width:40% !important;}
+.elementor-section.hold-40-60 > .elementor-container > .elementor-column:last-child {width:60% !important;}
+
+.elementor-section.hold-65-45 > .elementor-container > .elementor-column:first-child {width:65% !important;}
+.elementor-section.hold-65-45 > .elementor-container > .elementor-column:last-child {width:45% !important;}
+
+.elementor-section.hold-45-65 > .elementor-container > .elementor-column:first-child {width:45% !important;}
+.elementor-section.hold-45-65 > .elementor-container > .elementor-column:last-child {width:65% !important;}
 
 @media (min-width:767px) {
    .elementor-section.md\:cols-w-auto > .elementor-container > .elementor-column {width:auto !important;}
@@ -130,67 +156,28 @@ body.elementor-editor-active .elementor-column {min-width:50px !important;}
    .elementor-section.md\:hold-45-65 > .elementor-container > .elementor-column:last-child {width:65% !important;}
 }
 
-.elementor-section.cols-w-auto > .elementor-container > .elementor-column {width:auto !important;}
+/* 3 Column Holds %
+   ========================================================================== */
 
-.elementor-section.hold-50 > .elementor-container > .elementor-column {width:50% !important;}
+.elementor-section.hold-5p-90p-5p > .elementor-container > .elementor-column {width:90% !important;}
+.elementor-section.hold-5p-90p-5p > .elementor-container > .elementor-column:first-child {width:5% !important;}
+.elementor-section.hold-5p-90p-5p > .elementor-container > .elementor-column:last-child {width:5% !important;}
 
-.elementor-section.hold-75-25 > .elementor-container > .elementor-column:first-child {width:75% !important;}
-.elementor-section.hold-75-25 > .elementor-container > .elementor-column:last-child {width:25% !important;}
+.elementor-section.hold-10p-80p-10p > .elementor-container > .elementor-column {width:80% !important;}
+.elementor-section.hold-10p-80p-10p > .elementor-container > .elementor-column:first-child {width:10% !important;}
+.elementor-section.hold-10p-80p-10p > .elementor-container > .elementor-column:last-child {width:10% !important;}
 
-.elementor-section.hold-25-75 > .elementor-container > .elementor-column:first-child {width:25% !important;}
-.elementor-section.hold-25-75 > .elementor-container > .elementor-column:last-child {width:75% !important;}
-
-.elementor-section.hold-60-40 > .elementor-container > .elementor-column:first-child {width:60% !important;}
-.elementor-section.hold-60-40 > .elementor-container > .elementor-column:last-child {width:40% !important;}
-
-.elementor-section.hold-40-60 > .elementor-container > .elementor-column:first-child {width:40% !important;}
-.elementor-section.hold-40-60 > .elementor-container > .elementor-column:last-child {width:60% !important;}
-
-.elementor-section.hold-65-45 > .elementor-container > .elementor-column:first-child {width:65% !important;}
-.elementor-section.hold-65-45 > .elementor-container > .elementor-column:last-child {width:45% !important;}
-
-.elementor-section.hold-45-65 > .elementor-container > .elementor-column:first-child {width:45% !important;}
-.elementor-section.hold-45-65 > .elementor-container > .elementor-column:last-child {width:65% !important;}
+@media (min-width:767px) {
+   .elementor-section.md\:hold-10p-80p-10p > .elementor-container > .elementor-column {width:80% !important;}
+   .elementor-section.md\:hold-10p-80p-10p > .elementor-container > .elementor-column:first-child {width:10% !important;}
+   .elementor-section.md\:hold-10p-80p-10p > .elementor-container > .elementor-column:last-child {width:10% !important;}
+}
 
 /* BTN (shortcode in functions)
    ========================================================================== */
 
 .btn {display:inline-block; padding:7px 25px; font-size:1.2rem; background:white; border-radius:25px; color: black; font-family: "Fjalla One", Sans-serif !important; border:solid thin #F36F21; text-transform: uppercase;}
 .btn i {margin-left:17px; color: #F36F21;}
-
-/* Slider
-   ========================================================================== */
-
-.slider-container {max-width:570px; width:100%; margin: 0 auto;}
-
-#b3-sliders {position:relative; height:570px;}
-#b3-sliders .b3-slider {display:none; text-align:center; width:100%; height:100%; position:absolute; top:0; left:0;}
-#b3-sliders .b3-slider.active {display:block;}
-
-#b3-sliders .b3-slider .b3-slider-inner {display:flex; width:100%; height:100%; align-items:flex-end;}
-
-#b3-sliders .b3-slider .b3-slider-content {background-color:rgba(55,55,55,0.4); border-radius:25px; overflow:hidden;}
-#b3-sliders .b3-slider .b3-slider-content-inner {padding:45px 25px;}
-#b3-sliders .elementor-button {background:none; text-transform:uppercase; color:#F36F21;}
-#b3-sliders h3 {color:white; line-height:1.5;}
-
-#b3-sliders .b3-slider-image {display:block; margin:-70px auto 0; position:relative; z-index:1001; width:80%;}
-
-#b3-sliders .fa, #b3-sliders .fas {font-family: 'Font Awesome 5 Free'; font-weight: 900;}
-#b3-sliders .fa, #b3-sliders .fas {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    line-height: 1;
-}
-/*#b3-sliders .fa-arrow-right {content:""; display:inline-block; height:100%; background:url('../images/right-arrow.svg') center no-repeat; background-size:contain; width:20px; }*/
-
-@media (max-width: 500px) {
-    #b3-sliders {height:510px;}
-}
 
 /* Widget Toggle
    ========================================================================== */
