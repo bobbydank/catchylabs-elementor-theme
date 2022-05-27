@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $template_id = cl_elementor_get_header_id();
 
-if ( is_singular( 'header_footer' ) && $template_id > 0 ) {
+if ( is_singular( 'cl_header_footer' ) && $template_id > 0 ) {
 	return;
 }
 
