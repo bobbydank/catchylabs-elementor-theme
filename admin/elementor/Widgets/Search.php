@@ -7,7 +7,7 @@ use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 use Elementor\Group_Control_Typography;
 use Elementor\Widget_Base;
 
-class Search_Icon extends Widget_Base {
+class Search extends Widget_Base {
     
     /**
 	 * Get widget name.
@@ -18,7 +18,7 @@ class Search_Icon extends Widget_Base {
 	 *
 	 */
 	public function get_name() {
-		return CL_ELEMENTOR_PREFIX . '-search-icon';
+		return CL_ELEMENTOR_PREFIX . '-search';
 	}
     
     /**
@@ -32,7 +32,7 @@ class Search_Icon extends Widget_Base {
 	 *
 	 */
 	public function get_title() {
-		return __( 'Search Icon', 'cl-elementor' );
+		return __( 'Site Search', 'cl-elementor' );
 	}
     
     /**
@@ -74,6 +74,46 @@ class Search_Icon extends Widget_Base {
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
+
+		$this->add_control(
+			'search_type',
+			[
+				'label'   => __( 'Search Type', 'cl-elementor' ),
+				'type'    => \Elementor\Controls_Manager::SELECT,
+				'options' => array(
+					'icon'  => 'Icon (opens overlay)',
+					'form'  => 'Search Form'
+				),
+			]
+		);
+
+		$this->add_responsive_control( 
+            'form_align', 
+            [
+                'label'     => __( 'Form Alignment', 'elementor' ),
+                'type'      => Controls_Manager::CHOOSE,
+                'options'   => [
+                    'flex-start'   => [
+                        'title' => __( 'Left', 'elementor' ),
+                        'icon'  => 'eicon-text-align-left',
+                    ],
+                    'center' => [
+                        'title' => __( 'Center', 'elementor' ),
+                        'icon'  => 'eicon-text-align-center',
+                    ],
+                    'flex-end'  => [
+                        'title' => __( 'Right', 'elementor' ),
+                        'icon'  => 'eicon-text-align-right',
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} #searchform' => 'justify-content: {{VALUE}};',
+                ],
+				'condition' => array(
+					'search_type' => 'form',
+				),
+		    ] 
+        );
         
         $this->add_control(
 			'icon',
@@ -84,6 +124,9 @@ class Search_Icon extends Widget_Base {
 					'value' => 'fa-solid fa-magnifying-glass',
 					'library' => 'solid',
 				],
+				'condition' => array(
+					'search_type' => 'icon',
+				),
 			]
 		);
 
@@ -95,6 +138,9 @@ class Search_Icon extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .cl-search-icon' => 'color: {{VALUE}}',
 				],
+				'condition' => array(
+					'search_type' => 'icon',
+				),
 			]
 		);
 
@@ -120,6 +166,9 @@ class Search_Icon extends Widget_Base {
                 'selectors' => [
                     '{{WRAPPER}} .cl-search-icon' => 'text-align: {{VALUE}};',
                 ],
+				'condition' => array(
+					'search_type' => 'icon',
+				),
 		    ] 
         );
 
@@ -144,6 +193,9 @@ class Search_Icon extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .cl-search-icon' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
+				'condition' => array(
+					'search_type' => 'icon',
+				),
 			]
 		);
         
@@ -158,13 +210,15 @@ class Search_Icon extends Widget_Base {
 	 */
 	protected function render() {
         $settings = $this->get_settings_for_display();
-		?>
-
-        <div class="cl-search-icon">
-			<?php \Elementor\Icons_Manager::render_icon( $settings['icon'], [ 'aria-hidden' => 'true' ] ); ?>
-		</div>
-
+		
+		
+		if ($settings['search_type'] == 'icon') : ?>
+			<div class="cl-search-icon">
+				<?php \Elementor\Icons_Manager::render_icon( $settings['icon'], [ 'aria-hidden' => 'true' ] ); ?>
+			</div>
+		<?php else : ?>
+			<?php get_search_form(); ?>
 		<?php
-
+		endif;
 	}
 }
