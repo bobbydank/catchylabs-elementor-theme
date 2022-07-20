@@ -68,13 +68,14 @@ function cl_load_scripts () {
 		
 		//css libs
 		if (cl_elementor_get_theme_option('css_tailwind') === 'on') {
-			wp_enqueue_style( 'cl_tailwind', get_template_directory_uri().'/assets/css/tailwind.min.css', array(), 1.0, false );
+			wp_enqueue_style( 'cl_tailwind', '//cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css', array(), 1.0, false );
 		}
 		
 		if (cl_elementor_get_theme_option('css_fontawesome') === 'on') {
-			wp_enqueue_style( 'cl_fontawesome', get_template_directory_uri().'/assets/css/fontawesome/css/all.min.css', array(), 1.0, false );
-			wp_enqueue_style( 'cl_fontawesome_solid', get_template_directory_uri().'/assets/css/fontawesome/css/solid.min.css', array(), 1.0, false );
-			wp_enqueue_style( 'cl_fontawesome_regular', get_template_directory_uri().'/assets/css/fontawesome/css/regular.min.css', array(), 1.0, false );
+			wp_enqueue_style( 'cl_fontawesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css', false );
+			wp_enqueue_style( 'cl_fontawesome_solid', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/solid.min.css', false );
+			wp_enqueue_style( 'cl_fontawesome_brands', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/brands.min.css', false );
+			wp_enqueue_style( 'cl_fontawesome_regular', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/regular.min.css', false );
 		}
 		
 		wp_enqueue_style( 'cl_lightbox', get_template_directory_uri().'/assets/js/magnific/magnific-popup.css', array(), $ver, false );
