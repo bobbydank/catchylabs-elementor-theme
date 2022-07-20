@@ -68,7 +68,7 @@ function cl_load_scripts () {
 		
 		//css libs
 		if (cl_elementor_get_theme_option('css_tailwind') === 'on') {
-			wp_enqueue_style( 'cl_tailwind', '//cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css', array(), 1.0, false );
+			wp_enqueue_style( 'cl_tailwind', '//cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css', false );
 		}
 		
 		if (cl_elementor_get_theme_option('css_fontawesome') === 'on') {
