@@ -16,11 +16,12 @@ get_header();
 
 $is_cl_elementor_exist = function_exists( 'elementor_theme_do_location' );
 
-
 if ( is_singular() ) {
 	if ( ! $is_cl_elementor_exist || ! elementor_theme_do_location( 'single' ) ) {
 		if (get_post_type('cl_header_footer')) {
 			get_template_part( 'templates/hf' );
+		} elseif (is_page()) {
+			get_template_part( 'templates/page' );
 		} else {
 			get_template_part( 'templates/single' );
 		}
