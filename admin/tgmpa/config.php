@@ -72,6 +72,11 @@ function cl_register_required_plugins() {
 			'name'                     => esc_html__('Contact Form 7 Database Addon'), // The plugin name
 			'slug'                     => 'contact-form-cfdb7', // The plugin slug (typically the folder name)
 			'required'                 => false, // If false, the plugin is only 'recommended' instead of required
+		),
+		array(
+			'name'                     => esc_html__('Yoast SEO'), // The plugin name
+			'slug'                     => 'wordpress-seo', // The plugin slug (typically the folder name)
+			'required'                 => false, // If false, the plugin is only 'recommended' instead of required
 		)
 	);
 	$config = array(
